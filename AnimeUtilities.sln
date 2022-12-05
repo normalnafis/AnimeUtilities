@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeasonalAnime", "SeasonalAnime\SeasonalAnime.csproj", "{3E885095-2BFB-4C4E-A10E-490718E8DB1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E885095-2BFB-4C4E-A10E-490718E8DB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E885095-2BFB-4C4E-A10E-490718E8DB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E885095-2BFB-4C4E-A10E-490718E8DB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E885095-2BFB-4C4E-A10E-490718E8DB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFEB7F90-E27B-4672-8873-722EACE09332}
+	EndGlobalSection
+EndGlobal
