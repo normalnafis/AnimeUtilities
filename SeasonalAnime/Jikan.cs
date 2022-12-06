@@ -9,13 +9,13 @@ namespace SeasonalAnime
 {
     public static class Jikan
     {
-        public static RestResponse GetAnimeCurrentSeason()
+        public static string? GetAnimeCurrentSeason()
         {
             using(var client = new RestClient("https://api.jikan.moe/v4/seasons/now"))
             {
                 var request = new RestRequest();
                 var result = client.Get(request);
-                return result;
+                return result.Content;
             }
         }
         public static void GetAnimeFromAnySeason(string year, string season)
