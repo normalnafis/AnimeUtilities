@@ -4,4 +4,6 @@ using SeasonalAnime;
 var currentSeason = Season.GetCurrentSeason();
 var currentYear = Season.GetYear();
 Console.WriteLine($"The current season is {currentSeason}, and the current year is {currentYear}");
-Jikan.GetAnimeCurrentSeason();
+var seasonalAnimeData = Jikan.GetAnimeCurrentSeason();
+Console.WriteLine($"{seasonalAnimeData.Content}");
+Console.ReadLine();
