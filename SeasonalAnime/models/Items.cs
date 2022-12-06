@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,13 @@ namespace SeasonalAnime.models
 {
     public class Items
     {
-        public int count { get; set; }
-        public int total { get; set; }
-        public int per_page { get; set; }
+        [JsonProperty("count")]
+        public int Count { get; set; }
+
+        [JsonProperty("total")]
+        public int Total { get; set; }
+
+        [JsonProperty("per_page")]
+        public int PerPage { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,16 @@ namespace SeasonalAnime.models
 {
     public class Pagination
     {
-        public int last_visible_page { get; set; }
-        public bool has_next_page { get; set; }
-        public int current_page { get; set; }
-        public Items items { get; set; }
+        [JsonProperty("last_visible_page")]
+        public int LastVisiblePage { get; set; }
+
+        [JsonProperty("has_next_page")]
+        public bool HasNextPage { get; set; }
+
+        [JsonProperty("current_page")]
+        public int CurrentPage { get; set; }
+
+        [JsonProperty("items")]
+        public Items? Items { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,13 @@ namespace SeasonalAnime.models
 {
     public class Trailer
     {
-        public string youtube_id { get; set; }
-        public string url { get; set; }
-        public string embed_url { get; set; }
+        [JsonProperty("youtube_id")]
+        public string? YoutubeId { get; set; }
+
+        [JsonProperty("url")]
+        public string? Url { get; set; }
+        
+        [JsonProperty("embed_url")]
+        public string? EmbedUrl { get; set; }
     }
 }

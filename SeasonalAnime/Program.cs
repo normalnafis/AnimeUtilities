@@ -10,6 +10,9 @@ var responseBody = Jikan.GetAnimeCurrentSeason();
 if (responseBody != null)
 {
     var animeData = JsonConvert.DeserializeObject<Anime>(responseBody);
-    var data = animeData.data;
+    if(animeData != null)
+    {
+        var data = animeData.Data;
+    }
 }
 Console.ReadLine();

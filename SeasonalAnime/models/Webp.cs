@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,13 @@ namespace SeasonalAnime.models
 {
     public class Webp
     {
-        public string image_url { get; set; }
-        public string small_image_url { get; set; }
-        public string large_image_url { get; set; }
+        [JsonProperty("image_url")]
+        public string? ImageUrl { get; set; }
+
+        [JsonProperty("small_image_url")]
+        public string? SmallImageUrl { get; set; }
+
+        [JsonProperty("large_image_url")]
+        public string? LargeImageUrl { get; set; }
     }
 }
