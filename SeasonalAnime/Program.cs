@@ -15,4 +15,4 @@ if (responseBody != null)
         var data = animeData.Data;
     }
 }
-Console.ReadLine();
+Console.ReadLine(); 
