@@ -1,7 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using SeasonalAnime;
 using SeasonalAnime.models;
+using Microsoft.Extensions.Configuration;
+
+var config = new ConfigurationBuilder()
+               .AddJsonFile("appsettings.json", false)
+               .Build();
+
 
 var currentSeason = Season.GetCurrentSeason();
 var currentYear = Season.GetYear();
@@ -15,4 +20,3 @@ if (responseBody != null)
         var data = animeData.Data;
     }
 }
-Console.ReadLine(); 
