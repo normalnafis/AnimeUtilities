@@ -7,7 +7,7 @@ using System.Net.Mail;
 using System.Net;
 
 var config = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", false)
+               .AddJsonFile("C:\\Users\\Nafis Rahman\\source\\repos\\AnimeUtilities\\SeasonalAnime\\appsettings.json", false)
                .Build();
 
 var responseBody = Jikan.GetAnimeCurrentSeason();

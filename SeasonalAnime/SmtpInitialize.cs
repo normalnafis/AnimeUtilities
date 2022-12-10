@@ -31,11 +31,23 @@ namespace SeasonalAnime
 
                 var FromEmail = new MailAddress(emaildetails.Email, emaildetails.Name);
                 var ToEmail = new MailAddress(emaildetails.ToEmail, emaildetails.ToName);
-
                 var Message = new MailMessage
                 {
-
+                    From = FromEmail,
+                    Subject = "Anime for the season",
+                    Body = html,
+                    IsBodyHtml = true
                 };
+                Message.To.Add(ToEmail);
+
+                try
+                {
+                    Client.Send(Message);
+                }
+                catch(Exception ex)
+                {
+                    throw new ArgumentException(ex.Message);
+                }
             }
         }
     }
