@@ -2,21 +2,24 @@
 using SeasonalAnime;
 using SeasonalAnime.models;
 using Microsoft.Extensions.Configuration;
+using SeasonalAnime.appSettingsModels;
+using System.Net.Mail;
+using System.Net;
 
 var config = new ConfigurationBuilder()
                .AddJsonFile("appsettings.json", false)
                .Build();
 
-
-var currentSeason = Season.GetCurrentSeason();
-var currentYear = Season.GetYear();
-Console.WriteLine($"The current season is {currentSeason}, and the current year is {currentYear}");
 var responseBody = Jikan.GetAnimeCurrentSeason();
+var html = "";
 if (responseBody != null)
 {
     var animeData = JsonConvert.DeserializeObject<Anime>(responseBody);
-    if(animeData != null)
+    if (animeData != null)
     {
-        var data = animeData.Data;
+        html = HtmlString.BuildHtml(animeData);
     }
 }
+
+var emaildetails = config.GetRequiredSection("Emaildetails").Get<Emaildetails>();
+if (emaildetails != null) {SmtpInitialize.SendEmail(emaildetails, html);}
