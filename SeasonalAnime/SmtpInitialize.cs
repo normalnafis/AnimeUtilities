@@ -15,6 +15,8 @@ namespace SeasonalAnime
         {
             if (emaildetails != null)
             {
+                var year = Season.GetYear();
+                var season = Season.GetCurrentSeason();
                 SmtpClient Client = new SmtpClient()
                 {
                     Host = "smtp.gmail.com",
@@ -34,7 +36,7 @@ namespace SeasonalAnime
                 var Message = new MailMessage
                 {
                     From = FromEmail,
-                    Subject = "Anime for the season",
+                    Subject = $"Anime for the season {season} {year}",
                     Body = html,
                     IsBodyHtml = true
                 };
